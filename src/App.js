@@ -11,17 +11,28 @@ class App extends Component {
     this.state={
       buttonValue: null,
       buttonValueArray:[],
-      result:''
+      result:'',
+      flag:0
     }
   }
 
   myCallback= (dataFromChild) => {
     console.log(dataFromChild);
+    if ((dataFromChild === '+') || (dataFromChild === '-') || (dataFromChild === '*') ||(dataFromChild === '/')){
+      this.setState(
+      {
+        flag:1,
+      }
+      )
+    }
     if (dataFromChild === '='){
       this.refs.child.evaluate();
     }
     else if((dataFromChild === '+/-') || (dataFromChild === '%') || (dataFromChild === 'C') || (dataFromChild === '%')){
 
+    }
+    else if(((dataFromChild === '+') || (dataFromChild === '-') || (dataFromChild === '*') ||(dataFromChild === '/')) && this.state.flag === 1){
+      
     }
     else{
       this.setState(
