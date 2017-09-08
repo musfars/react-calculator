@@ -17,15 +17,20 @@ class App extends Component {
 
   myCallback= (dataFromChild) => {
     console.log(dataFromChild);
-    if (dataFromChild == '='){
+    if (dataFromChild === '='){
       this.refs.child.evaluate();
+    }
+    else if((dataFromChild === '+/-') || (dataFromChild === '%') || (dataFromChild === 'C') || (dataFromChild === '%')){
+
     }
     else{
       this.setState(
       {
         buttonValue:dataFromChild,
       }
-    )
+      )
+      this.state.buttonValueArray.push(dataFromChild);
+      console.log(this.state.buttonValueArray);
     }
   }
 
@@ -40,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <DisplayInput valueFromParent={this.state.buttonValue} ref='child' sentResultToParent={this.resultFromChild}/>
+        <DisplayInput valueFromParent={this.state.buttonValueArray} ref='child' sentResultToParent={this.resultFromChild}/>
         <DisplayOutput valueFromParent={this.state.result}/>
         <ButtonContainer callbackFromParent={this.myCallback}/>
       </div>

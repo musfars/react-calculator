@@ -3,10 +3,6 @@ import './App.css';
 
 class buttonComponentContainer extends Component{
 
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
       <div className="calculator__buttons-container">

@@ -13,13 +13,13 @@ class displayInputComponent extends Component{
 
   evaluate(){
     console.log('hi');
-    var a = this.state.inputValue;
+    var a = this.props.valueFromParent;
     // var b = a.toString();
-    // console.log(b);
+    console.log(a);
     var op1 = '';
     var op2 = '';
-    var i = 1;
-    while((a[i]!='+') && (a[i]!='-') && (a[i]!='*') && (a[i]!= '/')){
+    var i = 0;
+    while((a[i]!=='+') && (a[i]!=='-') && (a[i]!=='*') && (a[i]!=='/') && (i<a.length)){
       op1 += a[i];
       i++;
     }
@@ -32,29 +32,29 @@ class displayInputComponent extends Component{
         i++;
       }
     console.log(op2);
-    var x = parseInt(op1);
-    var y = parseInt(op2);
+    var x = parseInt(op1,10);
+    var y = parseInt(op2,10);
     var result;
-    if(oper == '+'){
+    if(oper === '+'){
       result = x + y;
     }
-    else if(oper == '-'){
+    else if(oper === '-'){
       result = x - y;
     }
-    else if(oper == '*'){
+    else if(oper === '*'){
       result = x * y;
     }
-    else if(oper == '/'){
-      result = x / y;
+    else if(oper === '/'){
+      result = (x / y).toFixed(4);
     }
     console.log(result);
     this.props.sentResultToParent(result);
   }
   render(){
-    {this.state.inputValue.push(this.props.valueFromParent)};
+    // {this.state.inputValue.push(this.props.valueFromParent)};
     return(
       <div className="calculator__display-input">
-      {this.state.inputValue}
+      {this.props.valueFromParent}
       </div>
     );
   }
