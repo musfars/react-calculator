@@ -1,45 +1,46 @@
 .App {
-    width: 200px;
+    width: 320px;
     border-top-right-radius: 2px;
     margin: 16px auto;
 }
 
 button {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     color: white;
     background: #ff3ea4;
     border: 1px solid #e52fa1;
+    font-size: 24px;
 }
 
 .longButton {
-    width: 100px;
+    width: 160px;
     border-bottom-left-radius: 8px;
 }
 
 .calculator__display-input {
     background: #ff0075;
-    height: 32px;
+    height: 64px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     text-align: right;
     padding-top: 16px;
     padding-right: 16px;
     color: white;
-    font-size: 12px;
+    font-size: 24px;
     box-sizing: border-box;
 }
 
 .calculator__display-output {
     background: #ff0075;
-    height: 50px;
+    height: 100px;
     text-align: right;
     box-sizing: border-box;
     color: white;
     font-weight: bold;
     padding-right: 16px;
     padding-bottom: 8px;
-    font-size: 36px;
+    font-size: 72px;
 }
 
 .darkButton {
