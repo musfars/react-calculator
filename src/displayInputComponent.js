@@ -32,8 +32,8 @@ class displayInputComponent extends Component{
         i++;
       }
     console.log(op2);
-    var x = parseInt(op1,10);
-    var y = parseInt(op2,10);
+    var x = parseFloat(op1,10);
+    var y = parseFloat(op2,10);
     var result;
     if(oper === '+'){
       result = x + y;
