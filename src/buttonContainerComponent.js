@@ -7,7 +7,7 @@ class buttonComponentContainer extends Component{
     return(
       <div className="calculator__buttons-container">
         {
-          ['C','+/-','%','/',7,8,9,'*',4,5,6,'-',1,2,3,'+'].map((item)=>
+          ['C','CLR','%','/',7,8,9,'*',4,5,6,'-',1,2,3,'+'].map((item)=>
           <button value={item} onClick={() => {this.props.callbackFromParent(item)}}>{item}</button>
           )
         }

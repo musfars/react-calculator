@@ -14,8 +14,9 @@ class displayInputComponent extends Component{
   evaluate(){
     console.log('hi');
     var a = this.props.valueFromParent;
-    // var b = a.toString();
     console.log(a);
+    var operPres = 0;
+    var k;
     var op1 = '';
     var op2 = '';
     var i = 0;

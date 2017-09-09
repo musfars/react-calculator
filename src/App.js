@@ -28,7 +28,23 @@ class App extends Component {
     if (dataFromChild === '='){
       this.refs.child.evaluate();
     }
-    else if((dataFromChild === '+/-') || (dataFromChild === '%') || (dataFromChild === 'C') || (dataFromChild === '%')){
+    else if(dataFromChild === 'CLR'){
+      this.setState(
+        {
+          buttonValueArray:[],
+          result:'',
+          flag:0
+        }
+        )
+    }
+    else if(dataFromChild === 'C'){
+      this.setState(
+        {
+          buttonValueArray:this.state.buttonValueArray.slice(0,-1)     
+        }
+        )
+    }
+    else if((dataFromChild === '%')){
 
     }
     else if(((dataFromChild === '+') || (dataFromChild === '-') || (dataFromChild === '*') ||(dataFromChild === '/')) && this.state.flag === 1){
